@@ -1,0 +1,14 @@
+<header>
+  <%= render "components/navbar" %>
+</header>
+<main>
+    <h2>Movie Lists</h2>
+  <ul class="list-cards">
+    <% @lists.each do |list| %>
+      <li>
+        <%= link_to list.name, list_path(list) %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to 'add list', new_list_path, class:'btn btn-primary' %>
+</main>
